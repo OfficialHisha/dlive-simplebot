@@ -1,0 +1,16 @@
+{
+    "me": {
+        "displayname": "Your displayname",
+        "username": "Your lino account name",
+        "authToken": "Your authorization token"
+    },
+    "bot": {
+        "displayname": "Your bots displayname",
+        "username": "Your bots lino account name",
+        "authToken": "Authorization token for your bot"
+    }
+}
+
+Change the fields accordingly to your information
+Additional accounts can be added by adding a new entry after the bot entry
+To use other accounts, initialize SimpleBot with the respective accounts

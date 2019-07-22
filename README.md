@@ -2,6 +2,7 @@
 
 ## Dependencies
 https://github.com/Fundage/Dlive-API
+If you put the dliveAPI folder in a location other than /imported/dliveAPI make sure to change the path in SimpleBot.js
 
 ## Description
 A simple bot wrapper for the bot functionality of https://github.com/Fundage/Dlive-API
