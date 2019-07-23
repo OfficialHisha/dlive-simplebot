@@ -1,7 +1,8 @@
 # dlive-simplebot
 
 ## Dependencies
-https://github.com/Fundage/Dlive-API
+* https://github.com/Fundage/Dlive-API
+* https://www.npmjs.com/package/websocket
 
 If you put the dliveAPI folder in a location other than /imported/dliveAPI make sure to change the path in simpleBot.js
 
