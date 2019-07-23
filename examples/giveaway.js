@@ -18,6 +18,7 @@ function startGiveaway(username) {
     console.log(username + " started a giveaway");
     bot.sendMessage("A giveaway has just started! Use !enter to participate");
     giveawayInProgress = true;
+    participants = [];
 }
 
 function endGiveaway(username) {
@@ -36,6 +37,7 @@ function endGiveaway(username) {
 
     const winner = participants[Math.floor(Math.random() * participants.length)];
     bot.sendMessage("The giveaway has ended, the winner is " + winner + ". GG");
+    participants = [];
 }
 
 function enterGiveaway(username) {

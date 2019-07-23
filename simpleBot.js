@@ -1,5 +1,7 @@
 const DAPI = require("./imported/dliveAPI");
 
+const DEBUG = false;
+
 let bot;
 let streamer;
 const commands = {
@@ -51,13 +53,14 @@ module.exports = class Chatreader {
                         break;
                 }
             } else
-                console.log(message);
+                if (DEBUG)
+                    console.log(message);
         });
 
         setInterval(function () {
             if (messageQueue.length > 0)
                 bot.sendMessage(streamer, messageQueue.shift());
-        }, 1700);
+        }, 2000);
     }
 
     registerCommand(commandString, callBack, commandLevel = commandLevelEnum.all, chatResponse = undefined) {
