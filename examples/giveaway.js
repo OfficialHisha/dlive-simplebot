@@ -7,7 +7,9 @@ giveawayInProgress = false;
 
 bot.registerCommand("!startgiveaway", startGiveaway, bot.commandLevel.streamer);
 bot.registerCommand("!enter", enterGiveaway, bot.commandLevel.all);
+bot.registerCommand("!giveaway", showGiveaway, bot.commandLevel.all);
 bot.registerCommand("!endgiveaway", endGiveaway, bot.commandLevel.streamer);
+bot.registerCommand("!stopgiveaway", endGiveaway, bot.commandLevel.streamer);
 
 function startGiveaway(username) {
     if (giveawayInProgress) {
@@ -19,6 +21,15 @@ function startGiveaway(username) {
     bot.sendMessage("A giveaway has just started! Use !enter to participate");
     giveawayInProgress = true;
     participants = [];
+}
+
+function showGiveaway() {
+    if (giveawayInProgress) {
+        bot.sendMessage("There is currently a giveaway in progress, type !enter to enter the giveaway!");
+    }
+    else {
+        bot.sendMessage("There is not a giveaway in progress currently");
+    }
 }
 
 function endGiveaway(username) {
