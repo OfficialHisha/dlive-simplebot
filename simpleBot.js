@@ -49,9 +49,9 @@ function tryRunParameterCommand(messageString, user, messageId) {
     const commandParts = messageString.split(' ');
 
     for (let i = commandParts.length - 1; i > 0; i--) {
-        let newCommandString = "";
-        for (let j = 0; j < i; j++) {
-            newCommandString += commandParts[j];
+        let newCommandString = commandParts[0];
+        for (let j = 1; j < i; j++) {
+            newCommandString += " " + commandParts[j];
         }
 
         if (newCommandString in commands) {
@@ -60,9 +60,9 @@ function tryRunParameterCommand(messageString, user, messageId) {
                 return;
 
             const command = commands[newCommandString];
-            const parameters = newCommandString.slice(i);
+            commandParts.splice(0, i);
             if (command.callback)
-                command.callback({username: user.username, linoname: user.linoname, roomRole: user.roomRole, messageId: messageId, parameters: parameters });
+                command.callback({username: user.username, linoname: user.linoname, roomRole: user.roomRole, messageId: messageId, parameters: commandParts });
 
             if (command.autoResponse)
                 sendMessage(command.autoResponse);
